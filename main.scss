@@ -1,1 +1,108 @@
+html {
+  font-family: Arial sans-serif;
+  font-size: 16px;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.people {
+  margin: 0 auto;
+  padding: 30px 35px;
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+  
+
+  @media (min-width:1000px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+
+  
+  }
+
+
+  .person {
+    &__photo {
+      position: relative;
+      z-index: 1;
+     
+    }
+
+    
+    &__photo img{
+      margin-bottom: 8px;
+      display: block;
+
+      width: 100%;
+      border-radius: 50%;
+      transition: border-radius 1s;
+    }
+
+
+    &__rank {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+
+      width: 32px;
+      height: 32px;
+      background-color: #fff;
+      border-radius: 50%;
+
+      text-align: center;
+      line-height: 32px;
+      color: #8B0000;
+      ;
+    }
+
+    &__details {
+     display: flex;
+     gap: 10px;
+     flex-direction: column;
+     justify-content: center;
+    }
+
+    &__name {
+    align-self: center;
+
+    font-size: 20px;
+    line-height: 23px;
+    }
+
+    &__extra {
+      align-self: center;
+      opacity: 0;
+    }
+
+
+    &:hover {
+      z-index: 2;
+      border-radius: 12px;
+      padding: 12px;
+      transform: scale(1.2);
+      background: #EEEEEE;
+      transition: transform 1s;
+      
+
+
+      & .person__photo img {
+        border-radius: 60px;
+         }
+
+
+       & .person__extra {
+         opacity: 1;
+       }
+        }
+     
+        
+    }
+
+
+
+  
