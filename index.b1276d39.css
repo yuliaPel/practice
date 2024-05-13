@@ -11,10 +11,9 @@ body {
 .people {
   grid-template-columns: repeat(2, 200px);
   justify-content: center;
-  gap: 30px;
+  column-gap: 30px;
   margin: 0 auto;
   padding: 30px 35px;
-  transition: transform 1s;
   display: grid;
 }
 
@@ -25,6 +24,7 @@ body {
 }
 
 .person__photo {
+  z-index: 1;
   position: relative;
 }
 
@@ -32,7 +32,7 @@ body {
   border-radius: 50%;
   width: 100%;
   margin-bottom: 8px;
-  transition: border-radius 1s 1s;
+  transition: border-radius 1s;
   display: block;
 }
 
@@ -64,14 +64,16 @@ body {
 }
 
 .person__extra {
+  opacity: 0;
   align-self: center;
-  display: none;
 }
 
 .person:hover {
+  z-index: 2;
   background: #eee;
   border-radius: 12px;
   padding: 12px;
+  transition: transform 1s;
   transform: scale(1.2);
 }
 
@@ -80,9 +82,6 @@ body {
 }
 
 .person:hover .person__extra {
-  z-index: 2;
-  display: block;
-  position: absolute;
-  top: 100%;
+  opacity: 1;
 }
 /*# sourceMappingURL=index.b1276d39.css.map */
