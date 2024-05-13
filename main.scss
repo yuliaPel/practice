@@ -12,11 +12,9 @@ body {
   margin: 0 auto;
   padding: 30px 35px;
   display: grid;
-  gap: 30px;
+  column-gap: 30px;
   grid-template-columns: repeat(2, 200px);
   justify-content: center;
-
-  transition: transform 1s;
   
 
   @media (min-width:1000px) {
@@ -30,6 +28,7 @@ body {
   .person {
     &__photo {
       position: relative;
+      z-index: 1;
      
     }
 
@@ -40,8 +39,9 @@ body {
 
       width: 100%;
       border-radius: 50%;
-      transition: border-radius 1s 1s;
+      transition: border-radius 1s;
     }
+
 
     &__rank {
       position: absolute;
@@ -76,16 +76,17 @@ body {
 
     &__extra {
       align-self: center;
-      display: none;
+      opacity: 0;
     }
 
 
     &:hover {
-      
+      z-index: 2;
       border-radius: 12px;
       padding: 12px;
       transform: scale(1.2);
       background: #EEEEEE;
+      transition: transform 1s;
       
 
 
@@ -95,10 +96,7 @@ body {
 
 
        & .person__extra {
-        position: absolute;
-        display: block;
-        top: 100%;
-        z-index: 2;
+         opacity: 1;
        }
         }
      
